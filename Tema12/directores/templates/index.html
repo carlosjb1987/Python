@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Hola{% endblock %}
+
+{% block content %}
+
+<h1>El número de autores es {{directores}}</h1>
+
+
+{% for dir in director %}   
+    <ul class="list-group">
+        <li class="list-group-item text-center"> {{ dir }} - {{dir.estado}} </li>
+         
+    </ul>
+{% endfor %}
+<h1>El número de peliculas es {{num_peliculas}}</h1>
+
+
+{% for pel in peliculas %}   
+    <ul class="list-group">
+        <li class="list-group-item text-center"> {{pel}} - {{pel.director.nombre}} - {{pel.descripcion}}</li>
+         
+    </ul>
+{% endfor %}
+
+<h1>El número de generos es {{generos}}</h1>
+
+
+{% for gen in genero %}   
+    <ul class="list-group">
+        <li class="list-group-item text-center"> {{gen}}</li>
+         
+    </ul>
+{% endfor %}
+    
+
+
+{% endblock %}
+
+
